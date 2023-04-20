@@ -7,31 +7,33 @@
     ?>
 </head>
 <body>
-    <?php require 'css/blocks/header.php';?>
+    <?php require 'css/blocks/header.php';
+        require 'debug.php';    
+        ?>
+                <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file">
+                <button type="submit">Send</button>
+                </form>
+        <?php
+        
+        @$file = move_uploaded_file($_FILES["file"]["tmp_name"], 'upload/' . $_FILES['file']['name']);
 
-    <form action="" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" id="file">
-    <button type="submit">Send</button>
-    </form>
-
-    <?php
+        if (!empty($file)) 
+        {
+            $r_file = file_get_contents('upload/' . $_FILES['file']['name']);
     
-    $posts = $_FILES['file']; 
-
-    $ourData = file_get_contents("js.json");
-    $file = json_decode($ourData, true);
-
-    require_once 'dbConn.php';
-    // Пищем SQL запит:
-        $sql = "INSERT INTO `posts`(`date`, `text`) VALUES (?, ?)";
-    // Підготовка SQL запиту :
-        $query = $conn->prepare($sql); 
-        $query->execute([time(), $file,]); 
+            echo $r_file;
     
-    
-    
-    ?>
+                    require_once 'dbConn.php';    
+                    // Пиiем SQL запит:
+                    $sql = "INSERT INTO `posts`(`date`, `text`) VALUES (?, ?)";
+                    // Підготовка SQL запиту :
+                        $query = $conn->prepare($sql); 
+                        $query->execute([time(), $r_file]); 
+        }
+        echo 'Виберіть файл!';
 
-    <?php require 'css/blocks/footer.php';?>
+    require 'css/blocks/footer.php';
+ ?>
 </body>
 </html>
