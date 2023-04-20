@@ -7,33 +7,85 @@
     ?>
 </head>
 <body>
-    <?php require 'css/blocks/header.php';
-        require 'debug.php';    
-        ?>
-                <form action="" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" id="file">
-                <button type="submit">Send</button>
-                </form>
-        <?php
-        
-        @$file = move_uploaded_file($_FILES["file"]["tmp_name"], 'upload/' . $_FILES['file']['name']);
+<?php require 'css/blocks/header.php';
+            require 'debug.php';?>
 
-        if (!empty($file)) 
-        {
-            $r_file = file_get_contents('upload/' . $_FILES['file']['name']);
-    
-            echo $r_file;
-    
-                    require_once 'dbConn.php';    
-                    // Пиiем SQL запит:
-                    $sql = "INSERT INTO `posts`(`date`, `text`) VALUES (?, ?)";
-                    // Підготовка SQL запиту :
-                        $query = $conn->prepare($sql); 
-                        $query->execute([time(), $r_file]); 
-        }
-        echo 'Виберіть файл!';
+     <main class="container mt-5">
+     <div class="row">
+         <div class="col-md-8 mb-3">
+             <?php  
 
-    require 'css/blocks/footer.php';
- ?>
+             // Номер поточної сторінки:
+             if (isset($_GET['pageno'])) {
+                 $pageno = $_GET['pageno'];
+             } else {
+                 $pageno = 1;
+             }
+             // Формула пагінації:
+             $no_of_records_per_page = 10;
+             $offset = ($pageno-1) * $no_of_records_per_page;
+     
+             // Підключення до бд:
+             $conn=mysqli_connect("localhost","root","root","test_task");
+             if (mysqli_connect_errno()){
+                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                 die();
+             }
+     
+             $total_pages_sql = "SELECT COUNT(*) FROM `posts`";
+             $result = mysqli_query($conn,$total_pages_sql);
+             $total_rows = mysqli_fetch_array($result)[0];
+             $total_pages = ceil($total_rows / $no_of_records_per_page);
+     
+             $sql = "SELECT * FROM `posts` ORDER BY `date` DESC LIMIT $offset, $no_of_records_per_page";
+             $res_data = mysqli_query($conn,$sql);
+             while($row = mysqli_fetch_array($res_data)){
+                 $ts = date("H:i:s d.m.y", $row['date']);
+                 $jFile = $row['file'];
+                    if($row['name'] === NULL) {
+                        debug($row['text']);
+                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
+                                <button>Загрузити</button>
+                             </a>";
+                        echo  $ts . "<hr>";
+                    }elseif($row['name'] === NULL) {
+                        echo json_encode($jFile);
+                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
+                                 <button>Загрузити</button>
+                             </a>";
+                        echo  $ts . "<hr>";
+                    }elseif($row['text'] === NULL) {
+                        echo "Назва: " . $row['name'];
+                        echo json_encode($jFile);
+                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
+                                 <button>Загрузити</button>
+                             </a>";
+                        echo  $ts . "<hr>";
+                    }elseif($jFile === NULL) {
+                        echo "Назва: " . $row['name'];
+                        debug($row['text']);
+                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
+                                <button>Загрузити</button>
+                             </a>";
+                        echo  $ts . "<hr>";
+                    }
+             }
+             mysqli_close($conn);
+ 
+             ?>
+         </div>
+
+         <ul class="pagination">
+            <li><a href="?pageno=1"><<<</a></li>
+            <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Назад</a>
+            </li>
+            <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Вперед</a>
+            </li>
+            <li><a href="?pageno=<?php echo $total_pages; ?>">>>></a></li>
+        </ul>
+
+    <?php require 'css/blocks/footer.php';?> 
 </body>
 </html>

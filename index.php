@@ -42,33 +42,24 @@
              $res_data = mysqli_query($conn,$sql);
              while($row = mysqli_fetch_array($res_data)){
                  $ts = date("H:i:s d.m.y", $row['date']);
+                 $jFile = $row['file'];
                     if($row['name'] === NULL) {
                         debug($row['text']);
                         echo  $ts . "<hr>";
                     }elseif($row['name'] === NULL) {
-                        debug($row['file']);
+                        echo json_encode($jFile);
                         echo $ts . "<hr>";
                     }elseif($row['text'] === NULL) {
                         echo "Назва: " . $row['name'];
-                        debug($row['file']);
+                        echo json_encode($jFile);
                         echo $ts . "<hr>";
-                    }elseif($row['file'] === NULL) {
+                    }elseif($jFile === NULL) {
                         echo "Назва: " . $row['name'];
                         debug($row['text']);
                         echo $ts . "<hr>";
                     }
              }
              mysqli_close($conn);
-
-            //  $sql = "SELECT * FROM `posts` ORDER BY `date` DESC";
-            //  $query = $conn->query($sql);
-            //  while($row = $query->fetch(PDO::FETCH_OBJ)) {
-            //     $ts = date("H:i:s d.m.y", $row->date);
-            //     echo "<h3>$row->name</h3>
-            //         <p>$row->text</p>
-            //         <p>$ts</p>
-            //     ";
-            //  }
  
              ?>
          </div>
