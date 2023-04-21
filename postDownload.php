@@ -12,7 +12,7 @@
     <main class="container mt-5">
                 <div class="row">
                     <div class="col-md-8 mb-3">
-                        <h4>Загрузка посту:</h4>
+                        <h4>Додавання посту:</h4>
                             <label for="intro">Виберіть файл:</label><br>
                             <form action="" method="post" enctype="multipart/form-data">
                                 <input type="file" name="file" id="file">
@@ -32,10 +32,11 @@
                                     
                                     $name = $_FILES['file']['name'];
                             
-                                    require_once 'dbConn.php';    
-                                    // Пиiем SQL запит:
+                                    require_once 'dbConn.php'; 
+                                       
+                                    // Пишем SQL запит:
                                     $sql = "INSERT INTO `posts`(`date`, `name`, `text`, `file`) VALUES (?, ?, ?, ?)";
-                                        // Підготовка SQL запиту :
+                                    // Підготовка SQL запиту :
                                     $query = $conn->prepare($sql); 
                                     $query->execute([time(), $name, $r_file, $route]); 
                                     echo "Файл:  " . "\"" . @$_FILES['file']['name'] . "\"" . "  загружено";

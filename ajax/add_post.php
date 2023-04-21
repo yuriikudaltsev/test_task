@@ -3,6 +3,7 @@
 // Фільтруєм переданні данні:
 $name = trim(filter_var($_POST['name'],  FILTER_SANITIZE_STRING));    
 $text = trim(filter_var($_POST['text'],  FILTER_SANITIZE_STRING));
+
 // Провіряєм чи не менше символів в переданних данних:
     $error = '';
     if(strlen($name) <= 1 ) {

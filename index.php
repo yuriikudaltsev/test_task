@@ -27,17 +27,15 @@
              $offset = ($pageno-1) * $no_of_records_per_page;
      
              // Підключення до бд:
-             $conn=mysqli_connect("localhost","root","root","test_task");
-             if (mysqli_connect_errno()){
-                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                 die();
-             }
-     
+             require 'dbConnF.php';
+
+             // Розрахунок к-сті постів
              $total_pages_sql = "SELECT COUNT(*) FROM `posts`";
              $result = mysqli_query($conn,$total_pages_sql);
              $total_rows = mysqli_fetch_array($result)[0];
              $total_pages = ceil($total_rows / $no_of_records_per_page);
      
+             // Сортування та відображення
              $sql = "SELECT * FROM `posts` ORDER BY `date` DESC LIMIT $offset, $no_of_records_per_page";
              $res_data = mysqli_query($conn,$sql);
              while($row = mysqli_fetch_array($res_data)){
@@ -53,11 +51,14 @@
                         echo  $ts . "<hr>";
                     }
              }
+
+             // Закриваєм підключення бд
              mysqli_close($conn);
  
              ?>
          </div>
 
+         <!-- Кнопки пагінатора -->
          <ul class="pagination">
             <li><a href="?pageno=1"><<<</a></li>
             <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
