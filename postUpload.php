@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<?php $nameTitle = 'Вигрузка посту';
-          $ico = '/img/upload.ico';
-          require 'css/blocks/head.php';
+    <?php 
+        $nameTitle = 'Вигрузка посту';
+        $ico = '/img/upload.ico';
+        require 'css/blocks/head.php';
     ?>
 </head>
 <body>
-<?php require 'css/blocks/header.php';
-            require 'debug.php';?>
+    <?php require 'css/blocks/header.php';
+            require 'function.php';
+    ?>
      <main class="container mt-5">
      <div class="row">
          <div class="col-md-8 mb-3">
+            <!-- Форма для сортування постів-->
             <form method="post" action=""> 
                 <select name="select">
                     <option selected="" disabled="" hidden="">Від новіших</option>
@@ -50,7 +53,8 @@
                 }elseif(@$_POST['select'] === '2:old') {
                     $sql = "SELECT * FROM `posts` ORDER BY `date` LIMIT $offset, $no_of_records_per_page";
                 }
-
+                
+                //Відображення постів
                 $res_data = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_array($res_data)){
                     $ts = date("H:i:s d.m.y", $row['date']);

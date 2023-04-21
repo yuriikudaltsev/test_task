@@ -1,0 +1,45 @@
+{
+    "_id": "644281e4a8e08ad77aa2a8c7",
+    "index": 3,
+    "guid": "7dd770fd-252d-4ee6-b175-719466228cbe",
+    "isActive": false,
+    "balance": "$1,401.14",
+    "picture": "http://placehold.it/32x32",
+    "age": 35,
+    "eyeColor": "green",
+    "name": "Chris Pierce",
+    "gender": "female",
+    "company": "UTARIAN",
+    "email": "chrispierce@utarian.com",
+    "phone": "+1 (891) 453-3506",
+    "address": "281 Nostrand Avenue, Bowmansville, Tennessee, 5948",
+    "about": "Anim anim nisi eu ex est tempor culpa dolore eiusmod velit qui velit minim. Aliquip dolor tempor in eu irure Lorem qui ipsum id esse quis nostrud occaecat fugiat. Sunt sunt do nulla laboris officia non minim. Cupidatat sunt aliquip adipisicing adipisicing.\r\n",
+    "registered": "2022-08-04T04:59:24 -03:00",
+    "latitude": 80.941775,
+    "longitude": -39.53853,
+    "tags": [
+      "voluptate",
+      "dolor",
+      "magna",
+      "nulla",
+      "aliquip",
+      "laborum",
+      "sint"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Belinda Hodge"
+      },
+      {
+        "id": 1,
+        "name": "Audra Navarro"
+      },
+      {
+        "id": 2,
+        "name": "Vicky Nielsen"
+      }
+    ],
+    "greeting": "Hello, Chris Pierce! You have 9 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

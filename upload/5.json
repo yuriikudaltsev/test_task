@@ -1,0 +1,45 @@
+{
+    "_id": "644281e4999ef7b0ff8baf04",
+    "index": 5,
+    "guid": "91221fda-1f7e-47bf-823c-7098c12b4168",
+    "isActive": false,
+    "balance": "$1,358.41",
+    "picture": "http://placehold.it/32x32",
+    "age": 39,
+    "eyeColor": "brown",
+    "name": "Gill Gray",
+    "gender": "male",
+    "company": "ZYTRAC",
+    "email": "gillgray@zytrac.com",
+    "phone": "+1 (834) 557-2330",
+    "address": "804 Meserole Street, Whitestone, Wyoming, 6292",
+    "about": "Exercitation ea incididunt pariatur ad velit veniam ex labore consectetur. Ullamco minim nisi deserunt adipisicing anim laborum. Ipsum deserunt tempor officia exercitation officia officia eiusmod id ad. Duis sint consectetur irure esse eu sint ad dolore qui aliqua esse consequat enim. Amet aliquip veniam anim ex est culpa.\r\n",
+    "registered": "2016-09-22T11:05:51 -03:00",
+    "latitude": -13.767649,
+    "longitude": -54.592889,
+    "tags": [
+      "anim",
+      "nostrud",
+      "veniam",
+      "eu",
+      "deserunt",
+      "est",
+      "exercitation"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Sonya Larson"
+      },
+      {
+        "id": 1,
+        "name": "Leslie Sampson"
+      },
+      {
+        "id": 2,
+        "name": "Dixie Holloway"
+      }
+    ],
+    "greeting": "Hello, Gill Gray! You have 3 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

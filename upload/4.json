@@ -1,0 +1,45 @@
+{
+    "_id": "644281e4798824b74b73f1e1",
+    "index": 4,
+    "guid": "499ecc06-1b7e-4e55-85d0-8337bf7c55ff",
+    "isActive": true,
+    "balance": "$2,147.52",
+    "picture": "http://placehold.it/32x32",
+    "age": 37,
+    "eyeColor": "brown",
+    "name": "West Fitzgerald",
+    "gender": "male",
+    "company": "BARKARAMA",
+    "email": "westfitzgerald@barkarama.com",
+    "phone": "+1 (830) 597-2003",
+    "address": "635 Montgomery Street, Summerset, Idaho, 9342",
+    "about": "Incididunt ex enim ipsum aliqua fugiat eu duis exercitation id ea ut ipsum esse. Amet incididunt nulla mollit mollit occaecat eu Lorem. Ex cupidatat cupidatat magna nostrud et nostrud ut cupidatat magna voluptate deserunt sit.\r\n",
+    "registered": "2019-10-02T08:26:34 -03:00",
+    "latitude": 52.447737,
+    "longitude": 130.560645,
+    "tags": [
+      "adipisicing",
+      "elit",
+      "minim",
+      "exercitation",
+      "incididunt",
+      "eu",
+      "dolor"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Madeleine Daniel"
+      },
+      {
+        "id": 1,
+        "name": "Wendy Hancock"
+      },
+      {
+        "id": 2,
+        "name": "Alyson Miller"
+      }
+    ],
+    "greeting": "Hello, West Fitzgerald! You have 4 unread messages.",
+    "favoriteFruit": "apple"
+  }

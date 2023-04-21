@@ -1,0 +1,45 @@
+{
+    "_id": "644281e42d569746f59114a3",
+    "index": 1,
+    "guid": "e4c31f94-4ce4-4699-8e76-8f75b166ce94",
+    "isActive": true,
+    "balance": "$1,677.61",
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "eyeColor": "brown",
+    "name": "Goodwin Simpson",
+    "gender": "male",
+    "company": "SUSTENZA",
+    "email": "goodwinsimpson@sustenza.com",
+    "phone": "+1 (830) 467-3129",
+    "address": "727 Langham Street, Flintville, Ohio, 1701",
+    "about": "Fugiat pariatur aliquip quis culpa culpa nostrud dolor consectetur excepteur nostrud occaecat. Occaecat ut nisi nisi ullamco exercitation. Exercitation magna dolor eu consequat incididunt. Amet elit cillum irure et qui aliqua enim fugiat nisi amet non. Veniam ad eu nostrud cupidatat dolore dolor aliquip consectetur cillum do ad quis sit non. Sunt anim commodo laborum deserunt velit sunt culpa. Et pariatur voluptate exercitation sunt nulla ullamco consequat cillum qui qui et ad labore adipisicing.\r\n",
+    "registered": "2015-06-15T01:32:14 -03:00",
+    "latitude": 64.509315,
+    "longitude": 136.0183,
+    "tags": [
+      "cupidatat",
+      "magna",
+      "sit",
+      "enim",
+      "dolor",
+      "occaecat",
+      "excepteur"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Valenzuela Gross"
+      },
+      {
+        "id": 1,
+        "name": "Molly Collier"
+      },
+      {
+        "id": 2,
+        "name": "Alisa Drake"
+      }
+    ],
+    "greeting": "Hello, Goodwin Simpson! You have 10 unread messages.",
+    "favoriteFruit": "strawberry"
+  }

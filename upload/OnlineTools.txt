@@ -1,0 +1,89 @@
+OnlineTools
+Random
+Random Json Data Generator
+random json data generatorworld's simplest random tool
+Free online random JSON data generator. Just press a button and get your random JSON structure. There are no intrusive ads, popups or nonsense, just a random JSON data creator. Press a button, get a random JSON. Created by developers from team Browserling.
+look what we made! browserling
+Check out our project Browserling – your personal cloud browser.
+{
+  "tool": {
+    "allow": "curve",
+    "disease": "station",
+    "dream": true,
+    "chemical": 326477871.25640345,
+    "verb": [
+      "road",
+      -1135731017.1350803,
+      1974463856,
+      244400474.1541376,
+      "plant",
+      false
+    ],
+    "dull": 1480326613.3776712
+  },
+  "since": false,
+  "gone": "flower",
+  "visit": "ate",
+  "lucky": "pen",
+  "tax": true
+}
+Generate a new random JSON data structure
+3
+6
+10
+what is a random json data generator?learn more about this tool
+This tool generates random JSON files. It lets you configure a ton of various randomizer options. You can set the generated JSON data structure's depth. Arrays and objects increase depth by one. You can set how many elemenents get generated per depth level. You can alo set if the generator should always use that many elements per depth level, or if it can choose to generate from 0 to max elements per depth level. Then this randomizer lets you choose allowed JSON data types. You can choose if you want to generate booleans, numbers, strings, arrays and objects. Then you can choose the source of string generation. It can be English words or it can be completely random characters.
+random json data generator examplesclick to use
+10
+10
+1
+10
+15
+1
+pro tips master online random tools
+You can pass options to this tool using their codes as query arguments and it will automatically compute output. To get the code of an option, just hover over its icon. Here's how to type it in your browser's address bar. Click to try!
+all random tools 
+type to search!
+coming soon these random tools are on the way
+subscribe! never miss an update
+your email
+Subscribe
+feedback we'd love to hear from you!
+your email
+subject
+your thoughts
+Submit
+created with love by browserling51K@browserling
+We're Browserling — a friendly and fun cross-browser testing company powered by alien technology. At Browserling we love to make peoples' lives easier, so we created this collection of online random tools that is now enjoyed by millions of casual users. Our tools don't require advanced computer skills as each tool does exactly what it says and nothing more. Behind the scenes, our random tools are actually powered by our web developer tools that we created over the last couple of years. Check them out!
+secret message
+If you love our tools, then we love you, too! Use coupon code RANDOMLING to get a discount for our premium plans.
+privacy policy we don't log data!
+All conversions and calculations are done in your browser using JavaScript. We don't send a single bit about your input data to our servers. There is no server-side processing at all. We use Google Analytics and StatCounter for site usage analytics. Your IP address is saved on our web server for additional analytics. The free plan doesn't use cookies and don't store session information in cookies. The premium and team plans use cookies to store session information so that you are always logged in. We use your browser's local storage to save tools' input. It stays on your computer.
+terms of service the legal stuff
+By using Online Tools you agree to our Terms of Service. All tools are free for personal use but to use them for commercial purposes, you need to get a premium plan. You can't do illegal or shady things with our tools. We may block your access to tools, if we find out you're doing something bad. We're not liable for your actions and we offer no warranty. We may revise our terms at any time.
+
+OUR PRODUCT
+Features
+Pricing
+About Us
+51K
+@browserling
+TOP RANDOM TOOLS
+Generate Random Passwords
+Generate Random Numbers
+Generate Random Fractions
+Generate Random Primes
+Generate Random Strings
+Generate Random Dates
+Generate Random Data
+Generate Random IPs
+Pick a Random Item
+Shuffle Text Lines
+Shuffle Words
+Shuffle Letters
+CONTACT
+Contact Us
+hello@onlinetools.com
+© 2022 Browserling Inc. All rights reserved. Terms of Service | Privacy Policy
+Part of the exclusive  startup accelerator in Silicon Valley.
+Part of the exclusive  Microsoft BizSpark program for startups.
