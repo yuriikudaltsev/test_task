@@ -9,12 +9,19 @@
 <body>
 <?php require 'css/blocks/header.php';
             require 'debug.php';?>
-
      <main class="container mt-5">
      <div class="row">
          <div class="col-md-8 mb-3">
+            <form method="post" action=""> 
+                <select name="select">
+                    <option selected="" disabled="" hidden="">Від новіших</option>
+                    <option value="1:newer">Від новіших</option>
+                    <option value="2:old">Від старіших</option>
+                    <input type="submit" name="submit">
+                </select>
+            </form>
+            <hr>
              <?php  
-
              // Номер поточної сторінки:
              if (isset($_GET['pageno'])) {
                  $pageno = $_GET['pageno'];
@@ -31,41 +38,32 @@
                  echo "Failed to connect to MySQL: " . mysqli_connect_error();
                  die();
              }
-     
+             
              $total_pages_sql = "SELECT COUNT(*) FROM `posts`";
              $result = mysqli_query($conn,$total_pages_sql);
              $total_rows = mysqli_fetch_array($result)[0];
              $total_pages = ceil($total_rows / $no_of_records_per_page);
-     
+             
              $sql = "SELECT * FROM `posts` ORDER BY `date` DESC LIMIT $offset, $no_of_records_per_page";
+             if (@$_POST['select'] === '1:newer') {
+                $sql = "SELECT * FROM `posts` ORDER BY `date` DESC LIMIT $offset, $no_of_records_per_page";
+             }elseif(@$_POST['select'] === '2:old') {
+                $sql = "SELECT * FROM `posts` ORDER BY `date` LIMIT $offset, $no_of_records_per_page";
+             }
+
              $res_data = mysqli_query($conn,$sql);
              while($row = mysqli_fetch_array($res_data)){
                  $ts = date("H:i:s d.m.y", $row['date']);
                  $jFile = $row['file'];
-                    if($row['name'] === NULL) {
+                    if($jFile === NULL) {
+                        echo "Назва тексту: " . $row['name'];
+                        debug($row['text']);
+                        echo  $ts . "<hr>";
+                    }else{
+                        echo "Назва файлу: " . $row['name'];
                         debug($row['text']);
                         echo "<a href='/upload.php?id=" . $row['id'] . "'>
-                                <button>Загрузити</button>
-                             </a>";
-                        echo  $ts . "<hr>";
-                    }elseif($row['name'] === NULL) {
-                        echo json_encode($jFile);
-                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
                                  <button>Загрузити</button>
-                             </a>";
-                        echo  $ts . "<hr>";
-                    }elseif($row['text'] === NULL) {
-                        echo "Назва: " . $row['name'];
-                        echo json_encode($jFile);
-                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
-                                 <button>Загрузити</button>
-                             </a>";
-                        echo  $ts . "<hr>";
-                    }elseif($jFile === NULL) {
-                        echo "Назва: " . $row['name'];
-                        debug($row['text']);
-                        echo "<a href='/upload.php?id=" . $row['id'] . "'>
-                                <button>Загрузити</button>
                              </a>";
                         echo  $ts . "<hr>";
                     }

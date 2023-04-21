@@ -19,24 +19,26 @@
                                 <button type="submit">Загрузити</button>
                             </form>
                                 <?php
+                                require 'debug.php';
                                 
                                 @$file = move_uploaded_file($_FILES["file"]["tmp_name"], 'upload/' . $_FILES['file']['name']);
 
                                 if (!empty($file)) 
                                 {
                                     $r_file = file_get_contents('upload/' . $_FILES['file']['name']);
+                                    $route = 'upload/' . $_FILES['file']['name'];
+
+                                    debug($route);
                                     
                                     $name = $_FILES['file']['name'];
                             
                                     require_once 'dbConn.php';    
                                     // Пиiем SQL запит:
-                                    $sql = "INSERT INTO `posts`(`date`, `name`, `text`) VALUES (?, ?, ?)";
+                                    $sql = "INSERT INTO `posts`(`date`, `name`, `text`, `file`) VALUES (?, ?, ?, ?)";
                                         // Підготовка SQL запиту :
                                     $query = $conn->prepare($sql); 
-                                    $query->execute([time(), $name, $r_file]); 
+                                    $query->execute([time(), $name, $r_file, $route]); 
                                     echo "Файл:  " . "\"" . @$_FILES['file']['name'] . "\"" . "  загружено";
-                                }else{
-                                
                                 }
                                 ?>
                         <form action="" method="post">

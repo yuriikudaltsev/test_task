@@ -43,20 +43,14 @@
              while($row = mysqli_fetch_array($res_data)){
                  $ts = date("H:i:s d.m.y", $row['date']);
                  $jFile = $row['file'];
-                    if($row['name'] === NULL) {
+                    if($jFile === NULL) {
+                        echo "Назва тексту: " . $row['name'];
                         debug($row['text']);
                         echo  $ts . "<hr>";
-                    }elseif($row['name'] === NULL) {
-                        echo json_encode($jFile);
-                        echo $ts . "<hr>";
-                    }elseif($row['text'] === NULL) {
-                        echo "Назва: " . $row['name'];
-                        echo json_encode($jFile);
-                        echo $ts . "<hr>";
-                    }elseif($jFile === NULL) {
-                        echo "Назва: " . $row['name'];
+                    }else{
+                        echo "Назва файлу: " . $row['name'];
                         debug($row['text']);
-                        echo $ts . "<hr>";
+                        echo  $ts . "<hr>";
                     }
              }
              mysqli_close($conn);
